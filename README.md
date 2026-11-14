@@ -8,10 +8,10 @@ A comprehensive collection of **mathematical calculators, unit & base converters
 
 ```
 Math-Toolkit/
-├── base_converter.py                # Flagship all-in-one Binary / Decimal / Hexadecimal converter
+├── quadratic_canonical.py           # Flagship: 2nd-degree polynomial analyzer (canonical, factored, roots & plot)
+├── base_converter.py                # All-in-one Binary / Decimal / Hexadecimal converter
 ├── unit_converter.py                # Multi-category unit converter (distance, mass, currency, etc.)
 ├── geometry_trig_calculator.py      # Automated Trigonometry, Pythagoras, Thales & multiples solver
-├── quadratic_canonical.py           # 2nd-degree polynomial analyzer (canonical, factored, roots & plot)
 ├── numerical_integral.py            # Definite integral calculator over a user-defined interval
 ├── simple_derivative.py             # Symbolic derivative calculator for basic functions
 ├── curve_plotter.py                 # Point-by-point interactive curve plotter
@@ -30,9 +30,22 @@ Math-Toolkit/
 
 ---
 
+## 🌟 Flagship Project
+
+### Quadratic Polynomial Analyzer
+[`quadratic_canonical.py`](quadratic_canonical.py) · *Created November 18, 2023*
+
+A complete, bug-free second-degree polynomial analyzer for $f(x) = ax^2 + bx + c$:
+- **Canonical Form**: Computes and prints the exact vertex form $a(x + \alpha)^2 + \beta$.
+- **Factored Form & Exact Radicals**: Automatically formats the factored expression, preserving exact `sqrt(...)` notation when roots are irrational.
+- **Root Detection**: Computes and displays real solutions $x_1$ and $x_2$, or exits cleanly if no real solution exists.
+- **Key-Point Curve Sketch (`matplotlib.pyplot`)**: Pressing `OK`/`EXE` plots the 4 major points on a coordinate grid — both roots $(x_1, 0)$ and $(x_2, 0)$, the vertex/extremum, and the y-intercept $(0, c)$ — linked sequentially with directional arrows to visualize the parabola's shape.
+
+---
+
 ## 🛠️ Core Tools
 
-### Base Converter *(Flagship)*
+### Base Converter
 [`base_converter.py`](base_converter.py) · *Created February 15, 2025*
 
 All-in-one numerical base converter unifying every conversion between **Binary**, **Decimal**, and **Hexadecimal** (replacing the 6 standalone scripts archived in `history/base_conversions/`).
@@ -46,11 +59,6 @@ Comprehensive unit converter supporting distances, weights, currencies, temperat
 [`geometry_trig_calculator.py`](geometry_trig_calculator.py) · *Created April 14, 2023*
 
 Automates common middle/high-school math calculations: **Trigonometry**, **Pythagorean theorem**, **Thales' theorem**, and finding multiples of a number.
-
-### Quadratic Polynomial Analyzer
-[`quadratic_canonical.py`](quadratic_canonical.py) · *Created November 18, 2023*
-
-Computes the **canonical form**, **factored form** (when real roots exist), **equation solutions**, and draws a draft of the parabola on screen, exiting cleanly if no real factorization exists.
 
 ### Numerical Integral
 [`numerical_integral.py`](numerical_integral.py) · *Created November 28, 2023*
@@ -87,7 +95,7 @@ Experimental functions implementing custom number-rounding approaches.
 Two utility functions returning the closest and furthest values relative to a given target.
 
 ### Wilson Primality Test
-[`utilities/wilson_primality.py`](utilities/wilson_primality.py) · *Creation date unrecorded*
+[`utilities/wilson_primality.py`](utilities/wilson_primality.py) · *Created September 03, 2023*
 
 Verifies prime numbers within a range using **Wilson's theorem**: $(p - 1)! + 1 \equiv 0 \pmod{p}$. *(Mathematically exact, though computationally inefficient due to factorial growth.)*
 
@@ -103,7 +111,7 @@ Exploratory scripts focused on visual or algorithmic curiosity rather than pract
 Visualizes the **Sieve of Eratosthenes** across the full `320 × 222` screen (`1 pixel = 1 integer`, sieving **71,040 values**) and returns the first 3,000 primes found (capped by calculator RAM).
 
 ### Fourier Transform Visualization
-[`experiments/fourier_transform_viz.py`](experiments/fourier_transform_viz.py) · *Creation date unrecorded*
+[`experiments/fourier_transform_viz.py`](experiments/fourier_transform_viz.py) · *Created October 21, 2024*
 
 Visualizes the **Fourier Transform "winding machine"**: wraps a multi-frequency cosine signal (`fq` in Hz) around the origin in polar coordinates and plots the resulting **center of mass** (green dot) relative to the central axis (red line). *Note: Purely a visual exploration — it does not output numerical frequency values.*
 
