@@ -9,13 +9,16 @@ A comprehensive collection of **mathematical calculators, unit & base converters
 ```
 Math-Toolkit/
 ├── quadratic_canonical.py           # Flagship: 2nd-degree polynomial analyzer (canonical, factored, roots & plot)
-├── base_converter.py                # All-in-one Binary / Decimal / Hexadecimal converter
-├── unit_converter.py                # Multi-category unit converter (distance, mass, currency, etc.)
-├── geometry_trig_calculator.py      # Automated Trigonometry, Pythagoras, Thales & multiples solver
-├── numerical_integral.py            # Definite integral calculator over a user-defined interval
-├── simple_derivative.py             # Symbolic derivative calculator for basic functions
-├── curve_plotter.py                 # Point-by-point interactive curve plotter
-├── bar_chart_finance.py             # Simple bar-chart data visualizer
+├── base_converter.py                # Flagship: All-in-one Binary / Decimal / Hexadecimal converter
+├── unit_converter.py                # Flagship: Multi-category unit converter (9 categories)
+├── grade_calculator.py              # Very first script: weighted average & /20 grade converter
+├── calculus_and_geometry/
+│   ├── geometry_trig_calculator.py  # Automated Trigonometry, Pythagoras, Thales & multiples solver
+│   ├── numerical_integral.py        # Definite integral calculator over a user-defined interval
+│   └── simple_derivative.py         # Symbolic derivative calculator for basic functions
+├── plotting/
+│   ├── curve_plotter.py             # Point-by-point interactive curve plotter
+│   └── bar_chart_finance.py         # Simple bar-chart data visualizer
 ├── utilities/
 │   ├── rounding.py                  # Custom rounding helper functions
 │   ├── nearest_furthest.py          # Nearest and furthest value lookup helpers
@@ -30,7 +33,7 @@ Math-Toolkit/
 
 ---
 
-## 🌟 Flagship Project
+## 🌟 Flagship Projects
 
 ### Quadratic Polynomial Analyzer
 [`quadratic_canonical.py`](quadratic_canonical.py) · *Created November 18, 2023*
@@ -41,42 +44,61 @@ A complete, bug-free second-degree polynomial analyzer for $f(x) = ax^2 + bx + c
 - **Root Detection**: Computes and displays real solutions $x_1$ and $x_2$, or exits cleanly if no real solution exists.
 - **Key-Point Curve Sketch (`matplotlib.pyplot`)**: Pressing `OK`/`EXE` plots the 4 major points on a coordinate grid — both roots $(x_1, 0)$ and $(x_2, 0)$, the vertex/extremum, and the y-intercept $(0, c)$ — linked sequentially with directional arrows to visualize the parabola's shape.
 
----
-
-## 🛠️ Core Tools
-
 ### Base Converter
 [`base_converter.py`](base_converter.py) · *Created February 15, 2025*
 
-All-in-one numerical base converter unifying every conversion between **Binary**, **Decimal**, and **Hexadecimal** (replacing the 6 standalone scripts archived in `history/base_conversions/`).
+All-in-one numerical base converter unifying all 6 conversions between **Binary**, **Decimal**, and **Hexadecimal** (`Bin ↔ Dec`, `Hex ↔ Dec`, `Bin ↔ Hex`) from a single interactive menu:
+- Implements custom positional and repeated-division algorithms (`BinToDec`, `HexToDec`, `DecToBin`, `DecToHex`, `BinToHex`, `HexToBin`) without relying on built-in `bin()`/`hex()` shortcuts.
+- Replaces the 6 earlier standalone scripts preserved in `history/base_conversions/`.
 
 ### Unit Converter
 [`unit_converter.py`](unit_converter.py) · *Created April 05, 2023*
 
-Comprehensive unit converter supporting distances, weights, currencies, temperatures, speeds, time, volumes, pressures, and numerical values.
+Comprehensive interactive unit converter organized into **9 categories** with bidirectional conversions:
+- **Distances** (`km ↔ miles`), **Weights** (`kg ↔ lb`), **Currencies** (`EUR ↔ GBP / USD / CAD` with configurable exchange rates at the top of the script), **Temperatures**, **Speeds**, **Time**, **Volumes**, **Pressures**, and **Numerical Prefixes/Values**.
+
+---
+
+## 🎓 First Script
+
+### Grade & Weighted Average Calculator
+[`grade_calculator.py`](grade_calculator.py) · *Created March 03, 2023*
+
+My **very first Python script**, kept at the root for sentimental and practical reasons. Includes three interactive modes:
+- Convert any grade from an arbitrary scale to `/20`.
+- Compute the average of multiple `/20` grades.
+- Compute a fully flexible weighted average across grades on any scale with custom coefficients.
+
+---
+
+## 📐 Calculus & Geometry (`calculus_and_geometry/`)
 
 ### Geometry & Trigonometry Solver
-[`geometry_trig_calculator.py`](geometry_trig_calculator.py) · *Created April 14, 2023*
+[`calculus_and_geometry/geometry_trig_calculator.py`](calculus_and_geometry/geometry_trig_calculator.py) · *Created April 14, 2023*
 
 Automates common middle/high-school math calculations: **Trigonometry**, **Pythagorean theorem**, **Thales' theorem**, and finding multiples of a number.
 
 ### Numerical Integral
-[`numerical_integral.py`](numerical_integral.py) · *Created November 28, 2023*
+[`calculus_and_geometry/numerical_integral.py`](calculus_and_geometry/numerical_integral.py) · *Created November 28, 2023*
 
 Calculates the definite numerical integral of a user-defined function between two bounds.
 
 ### Simple Derivative
-[`simple_derivative.py`](simple_derivative.py) · *Created November 04, 2023*
+[`calculus_and_geometry/simple_derivative.py`](calculus_and_geometry/simple_derivative.py) · *Created November 04, 2023*
 
 Prompts for a function and outputs its derivative. Functional for simple expressions, though limited on complex functions.
 
+---
+
+## 📈 Plotting (`plotting/`)
+
 ### Curve Plotter
-[`curve_plotter.py`](curve_plotter.py) · *Created April 04, 2023*
+[`plotting/curve_plotter.py`](plotting/curve_plotter.py) · *Created April 04, 2023*
 
 Plots custom curves by asking for start/end coordinates and optional intermediate waypoints, displaying all entered points alongside the final trace. *(More of an exploratory plotter without a specific real-world use case.)*
 
 ### Bar Chart Visualizer
-[`bar_chart_finance.py`](bar_chart_finance.py) · *Created April 03, 2023*
+[`plotting/bar_chart_finance.py`](plotting/bar_chart_finance.py) · *Created April 03, 2023*
 
 Simple script that takes a list of values and displays them as a bar chart.
 
@@ -137,4 +159,4 @@ Individual conversion scripts created prior to being unified into `base_converte
 
 ## 🖥️ Requirements & Platform
 
-- MicroPython for **NumWorks** calculators (`kandinsky`, `math`, `time`).
+- MicroPython for **NumWorks** calculators (`kandinsky`, `matplotlib.pyplot`, `math`, `time`).
